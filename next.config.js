@@ -4,8 +4,10 @@ const webpack = require("webpack");
 const path = require("path");
 
 module.exports = withPlugins([[withImages]], {
+  assetPrefix: process.env.GITHUB_PAGES ? '/nextjs-material' : '',
   webpack(config, options) {
     config.resolve.modules.push(path.resolve("./"));
+    
     return config;
   },
 });
