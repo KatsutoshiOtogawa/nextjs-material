@@ -31,7 +31,9 @@ jobs:
     - run: yarn build
       env:
         GITHUB_PAGES: true
-    - run: yarn export
+    - run: |
+          yarn export
+          touch out/.nojekyll
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       if: ${{ github.ref == 'refs/heads/main' }}
