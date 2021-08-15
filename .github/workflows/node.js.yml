@@ -29,8 +29,6 @@ jobs:
 
     - run: yarn --frozen-lockfile
     - run: yarn build
-      env:
-        GITHUB_PAGES: true
     - run: |
           yarn export
           touch out/.nojekyll
